@@ -1,0 +1,26 @@
+.crop-container {
+  max-height: 500px;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+.ReactCrop {
+  max-width: 100%;
+  background: #f0f0f0;
+}
+
+.ReactCrop__image {
+  max-height: 70vh;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #ef4444;
+}
