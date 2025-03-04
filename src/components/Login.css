@@ -38,7 +38,9 @@
 .login-content {
   flex: 1;
   max-width: 700px;
-  padding-left: 100px;
+  padding-left: 10px;
+  /* padding-right: 100px; */
+  margin-right: 100px;
 }
 
 .login-content h1 {
@@ -60,7 +62,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 620px;
   height: 410px;
-  margin-right: 170px;
+  margin-right: 20px;
 }
 
 .admin-selector {
