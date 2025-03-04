@@ -79,6 +79,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     fetchPosts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchPosts = async () => {
@@ -86,15 +87,22 @@ const Dashboard = () => {
       setLoading(true);
       setError(null);
       
-      const response = await fetch(`http://localhost:3000/auth/posts`, {
-        credentials: "include",
+      // eslint-disable-next-line no-undef
+      const response = await fetch(`${config.API_URL}/auth/posts`, {
+        method: 'GET',
+        credentials: 'include',
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
       });
 
       if (!response.ok) {
+        if (response.status === 401) {
+          // Redirect to login if unauthorized
+          navigate('/login');
+          return;
+        }
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 

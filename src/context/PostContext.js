@@ -12,14 +12,15 @@ const PostProvider = ({ children }) => {
       setLoading(true);
       setError(null);
 
-      const response = await fetch(`http://localhost:3000/auth/posts`, {
-        credentials: "include",
+      const response = await fetch(`${config.API_URL}/auth/posts`, {
+        method: 'GET',
+        credentials: 'include',
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
       });
-console.log(response)
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
